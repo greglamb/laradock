@@ -8,13 +8,13 @@ ARG PHP_UPSTREAM_TIMEOUT=60
 
 ENV WEB_PHP_SOCKET=${PHP_UPSTREAM_CONTAINER}:${PHP_UPSTREAM_PORT}
 
-ENV WEB_DOCUMENT_ROOT=/var/www/
+ENV WEB_DOCUMENT_ROOT=/var/www/public/
 
 ENV WEB_PHP_TIMEOUT=${PHP_UPSTREAM_TIMEOUT}
 
 EXPOSE 80 443
 
-WORKDIR /var/www/
+WORKDIR /var/www/public/
 
 COPY vhost.conf /etc/apache2/sites-enabled/vhost.conf
 
